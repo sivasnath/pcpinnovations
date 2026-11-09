@@ -17,7 +17,6 @@ export default function Industry() {
       <section className="hero hero--ind" style={{ '--h': ind.hue }}>
         <div className="wrap hero__grid">
           <div>
-            <p className="eyebrow eyebrow--light">Industry</p>
             <h1>{ind.name}</h1>
             <p className="hero__sub">{ind.tagline}</p>
             <p className="hero__text">{ind.summary}</p>
@@ -71,7 +70,7 @@ export default function Industry() {
 
       <section className="band">
         <div className="wrap band__row">
-          <p className="band__lead">Next industry: <Link to={`/industries/${next.slug}`}>{next.name} →</Link></p>
+          <p className="band__lead">Next industry: <Link to={`/industries/${next.slug}`}>{next.name}</Link></p>
           <Link className="btn btn--light" to={`/contact?industry=${ind.slug}`}>Contact us about {ind.name}</Link>
         </div>
       </section>

@@ -18,7 +18,6 @@ export default function About() {
   return (
     <>
       <section className="wrap page-head">
-        <p className="eyebrow">About us</p>
         <h1>A professional platform for developing ventures that society needs.</h1>
         <p className="lede">
           A professional platform registered under Indian Trust Act 1882 (Registration No: 161/2015), for developing establishments and ventures depending on the need of the existing society.

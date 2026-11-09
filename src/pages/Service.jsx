@@ -14,7 +14,6 @@ export default function Service() {
     <>
       <section className="hero hero--sm">
         <div className="wrap">
-          <p className="eyebrow eyebrow--light">Service</p>
           <h1>{s.name}</h1>
           <p className="hero__sub">{s.tagline}</p>
         </div>
