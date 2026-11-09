@@ -3,6 +3,7 @@ import { industries } from '../data/industries.js'
 import { services } from '../data/services.js'
 import { site } from '../data/site.js'
 import useTitle from '../useTitle.js'
+import IndustryIcon from '../components/IndustryIcon.jsx'
 
 // The method is a real sequence, so the stages are numbered.
 const stages = [
@@ -58,6 +59,7 @@ export default function Home() {
                 <span className="index__dot" aria-hidden="true" />
                 <span className="index__name">{i.name}</span>
                 <span className="index__tag">{i.tagline}</span>
+                <IndustryIcon slug={i.slug} />
               </Link>
             </li>
           ))}

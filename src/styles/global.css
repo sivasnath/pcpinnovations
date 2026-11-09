@@ -194,7 +194,7 @@ h1 strong,h2 strong{font-weight:600}
 @keyframes stage{to{opacity:1}}
 @keyframes fill{to{transform:scaleX(1)}}
 .index{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.index__row{display:grid;grid-template-columns:14px minmax(200px,1fr) 1.6fr;gap:20px;align-items:baseline;padding:22px 4px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);transition:background-color .15s ease}
+.index__row{display:grid;grid-template-columns:14px minmax(200px,.9fr) 2fr 48px;gap:20px;align-items:baseline;padding:22px 4px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);transition:background-color .15s ease}
 .index__dot{width:12px;height:12px;border-radius:50%;background:hsl(var(--h) 60% 40%);align-self:center}
 .index__name{font-size:1.25rem;font-weight:500;transition:transform .2s var(--ease-out),color .15s ease}
 .index__tag{color:var(--muted)}
@@ -231,3 +231,11 @@ h1 strong,h2 strong{font-weight:600}
 .mini strong{color:var(--brand)}
 .hero--ind,.hero--sm{padding-top:72px}
 @media (hover:hover) and (pointer:fine){.card--link:hover,.mini:hover{border-color:var(--violet)}}
+
+/* industry index: shaded icon on hover */
+.index__icon{width:48px;height:48px;align-self:center;justify-self:end;color:hsl(var(--h) 55% 32%);opacity:0;transform:translateX(-8px) scale(.95);transition:opacity .2s var(--ease-out),transform .2s var(--ease-out)}
+@media (hover:hover) and (pointer:fine){
+  .index__row:hover .index__icon,.index__row:focus-visible .index__icon{opacity:.9;transform:none}
+}
+@media (max-width:860px){.index__icon{display:none}}
+@media (prefers-reduced-motion:reduce){.index__icon{transform:none;transition:opacity .15s}}
