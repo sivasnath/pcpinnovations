@@ -41,7 +41,7 @@ export default function ContactForm({ defaultIndustry = '' }) {
       </label>
       <label>Message<textarea name="message" rows="5" placeholder="Type your message here..." required /></label>
       <label>Referred by<input name="referred" /></label>
-      <button className="btn" disabled={state === 'sending'}>{state === 'sending' ? 'Sending…' : 'Submit'}</button>
+      <button className="btn" disabled={state === 'sending'}>{state === 'sending' ? 'Sending…' : 'Send message'}</button>
       {state === 'done' && <p className="form__ok" role="status">Thanks for submitting!</p>}
       {state === 'error' && <p className="form__err" role="alert">Could not send. Please email or call us instead.</p>}
     </form>

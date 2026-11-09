@@ -43,7 +43,7 @@ export default function Service() {
           <p className="band__more">Other services: {services.filter((x) => x.slug !== s.slug).map((x, i) => (
             <span key={x.slug}>{i ? ' · ' : ''}<Link to={`/services/${x.slug}`}>{x.name}</Link></span>
           ))}</p>
-          <p><Link className="btn btn--light" to="/contact">Start a conversation</Link></p>
+          <p><Link className="btn btn--light" to="/contact">Ask about this service</Link></p>
         </div>
       </section>
     </>

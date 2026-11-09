@@ -16,7 +16,7 @@ export default function Footer() {
           <p><a href={site.phoneHref}>{site.phone}</a></p>
         </div>
         <div>
-          <h3>Industries</h3>
+          <h2 className="foot-h">Industries</h2>
           <ul>
             {industries.map((i) => (
               <li key={i.slug}><Link to={`/industries/${i.slug}`}>{i.name}</Link></li>
@@ -24,13 +24,13 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <h3>Services</h3>
+          <h2 className="foot-h">Services</h2>
           <ul>
             {services.map((s) => (
               <li key={s.slug}><Link to={`/services/${s.slug}`}>{s.name}</Link></li>
             ))}
           </ul>
-          <h3 className="mt">Company</h3>
+          <h2 className="foot-h mt">Company</h2>
           <ul>
             <li><Link to="/about">About us</Link></li>
             <li><Link to="/contact">Contact</Link></li>

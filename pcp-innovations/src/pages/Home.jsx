@@ -11,20 +11,20 @@ export default function Home() {
       <section className="hero">
         <div className="wrap">
           <p className="eyebrow eyebrow--light">Kochi, Kerala · South India</p>
-          <h1>We take ventures from idea to approval.</h1>
-          <p className="hero__sub">
-            Project reports, FPO management, startup support and government scheme assistance, organised by industry so you can go straight to what is relevant to you.
+          <h1 data-enter>Project reports, FPO management and government scheme support for businesses in South India</h1>
+          <p className="hero__sub" data-enter>
+            We take ventures from idea to approval, for companies, farmer producer organisations and institutions. {site.registration}.
           </p>
           <div className="hero__cta">
             <a className="btn btn--light" href="#industries">Find your industry</a>
-            <Link className="btn btn--ghost" to="/contact">Contact us</Link>
+            <Link className="btn btn--ghost" to="/contact">Send an enquiry</Link>
           </div>
         </div>
       </section>
 
       <section id="industries" className="wrap">
         <p className="eyebrow">Industries</p>
-        <h2>Choose the sector you work in.</h2>
+        <h2>Industries we work in</h2>
         <div className="grid">
           {industries.map((i) => (
             <Link key={i.slug} to={`/industries/${i.slug}`} className="tile" style={{ '--h': i.hue }}>
@@ -40,7 +40,7 @@ export default function Home() {
       <section className="band band--soft">
         <div className="wrap">
           <p className="eyebrow">What we do</p>
-          <h2>Four services, applied to every industry.</h2>
+          <h2>Services for every industry</h2>
           <div className="cards">
             {services.map((s) => (
               <Link key={s.slug} to={`/services/${s.slug}`} className="card card--link">
@@ -53,13 +53,19 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="moment" aria-label="Our method">
+        <div className="wrap">
+          <p className="moment__text">Ten industries. One method: <span>study, plan, fund, implement.</span></p>
+        </div>
+      </section>
+
       <section className="wrap two">
         <div>
           <p className="eyebrow">About</p>
-          <h2>A professional platform for developing ventures.</h2>
+          <h2>About PCP Innovations</h2>
         </div>
         <div className="prose">
-          <p>{site.registration}. We help establishments and ventures grow in line with the needs of society, with dedicated professionals and the latest technology, in a cost-effective and timely manner.</p>
+          <p>We help establishments and ventures grow in line with the needs of society, with dedicated professionals and the latest technology, in a cost-effective and timely manner.</p>
           <p><Link to="/about">Read more about us →</Link></p>
         </div>
       </section>

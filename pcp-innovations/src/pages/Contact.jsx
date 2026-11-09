@@ -12,7 +12,7 @@ export default function Contact() {
     <section className="wrap page-head contact">
       <div>
         <p className="eyebrow">Contact us</p>
-        <h1>Tell us about your project.</h1>
+        <h1>Contact PCP Innovations</h1>
         <p className="lede">Share a few lines and the industry you work in. We will come back with how we can help.</p>
         <ul className="plain">
           <li><strong>Email</strong><br /><a href={`mailto:${site.email}`}>{site.email}</a></li>

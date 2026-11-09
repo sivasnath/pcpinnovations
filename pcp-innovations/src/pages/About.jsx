@@ -28,7 +28,7 @@ export default function About() {
         <div className="prose">
           <p>Based on the project, we develop the infrastructure and assets that are required to achieve our goals. We also conduct corporate events and business solutions to support industries and people, by giving awareness and opportunities for implementing each one’s ideas and dreams.</p>
           <p>Our operations are focused in South India with offices in Kaloor, Kochi, Kerala. We have dedicated professionals and experts for the accomplishment of each project with the latest technology in cost-effective and timely manner.</p>
-          <p><Link className="btn" to="/contact">Talk to us</Link></p>
+          <p><Link className="btn" to="/contact">Send an enquiry</Link></p>
         </div>
         <div>
           <h2 className="h3">Our services</h2>
