@@ -17,7 +17,7 @@ export default function Industry() {
       <section className="hero hero--ind" style={{ '--h': ind.hue }}>
         <div className="wrap hero__grid">
           <div>
-            <p className="eyebrow eyebrow--light">{ind.case} · Industry</p>
+            <p className="eyebrow eyebrow--light">Industry</p>
             <h1>{ind.name}</h1>
             <p className="hero__sub">{ind.tagline}</p>
             <p className="hero__text">{ind.summary}</p>
@@ -54,7 +54,6 @@ export default function Industry() {
           <div className="cards">
             {ind.featured.map((f, i) => (
               <article key={f.title} className="card">
-                <p className="card__no">{ind.case}.{String(i + 1).padStart(2, '0')}</p>
                 <h3>{f.title}</h3>
                 <p className="card__client">{f.client}</p>
                 <p>{f.text}</p>

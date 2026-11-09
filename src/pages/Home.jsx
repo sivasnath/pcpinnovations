@@ -28,7 +28,6 @@ export default function Home() {
         <div className="grid">
           {industries.map((i) => (
             <Link key={i.slug} to={`/industries/${i.slug}`} className="tile" style={{ '--h': i.hue }}>
-              <span className="tile__no">{i.case}</span>
               <h3>{i.name}</h3>
               <p>{i.tagline}</p>
               <span className="tile__go">View work →</span>

@@ -5,7 +5,6 @@ export const industries = [
   {
     slug: 'food-processing',
     name: 'Food Processing & F&B',
-    case: 'CF-01',
     hue: 28,
     tagline: 'From a processing unit on paper to licences, loans and a running plant.',
     summary:
@@ -46,7 +45,6 @@ export const industries = [
   {
     slug: 'agriculture-fpo',
     name: 'Agriculture & FPO',
-    case: 'CF-02',
     hue: 140,
     tagline: 'Farmer producer organisations, cold storage and shared farm infrastructure.',
     summary:
@@ -86,7 +84,6 @@ export const industries = [
   {
     slug: 'hospitality-tourism',
     name: 'Hospitality & Tourism',
-    case: 'CF-03',
     hue: 190,
     tagline: 'Resorts, farm stays and wellness retreats, planned before the first brick.',
     summary:
@@ -126,7 +123,6 @@ export const industries = [
   {
     slug: 'healthcare-wellness',
     name: 'Healthcare & Wellness',
-    case: 'CF-04',
     hue: 168,
     tagline: 'Clinics, hospitals, care homes and wellness products.',
     summary:
@@ -166,7 +162,6 @@ export const industries = [
   {
     slug: 'media-arts-entertainment',
     name: 'Media, Arts & Entertainment',
-    case: 'CF-05',
     hue: 320,
     tagline: 'Film, theatre, advertising and creative institutions.',
     summary:
@@ -190,7 +185,6 @@ export const industries = [
   {
     slug: 'trusts-ngos-institutions',
     name: 'Trusts, NGOs, Education & Institutions',
-    case: 'CF-06',
     hue: 255,
     tagline: 'Registration, compliance and funding for organisations that serve the public.',
     summary:
@@ -214,7 +208,6 @@ export const industries = [
   {
     slug: 'construction-real-estate',
     name: 'Construction & Real Estate',
-    case: 'CF-07',
     hue: 18,
     tagline: 'Residential, commercial and retirement developments, feasibility to financing.',
     summary:
@@ -247,7 +240,6 @@ export const industries = [
   {
     slug: 'finance-cooperatives',
     name: 'Finance & Cooperative Societies',
-    case: 'CF-08',
     hue: 215,
     tagline: 'Credit societies, finance companies and the structures that fund them.',
     summary:
@@ -274,7 +266,6 @@ export const industries = [
   {
     slug: 'technology-startups',
     name: 'Technology & Startups',
-    case: 'CF-09',
     hue: 262,
     tagline: 'Software, apps and early-stage ventures, from idea to first funding.',
     summary:
@@ -303,7 +294,6 @@ export const industries = [
   {
     slug: 'other-industries',
     name: 'Other Industries',
-    case: 'CF-10',
     hue: 45,
     tagline: 'Trade, retail, jewellery, manufacturing, logistics and security services.',
     summary:

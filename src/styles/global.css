@@ -59,11 +59,11 @@ section.wrap,.band .wrap{padding-top:56px;padding-bottom:56px}
 .tile{display:flex;flex-direction:column;gap:6px;padding:20px;border-radius:14px;text-decoration:none;color:#fff;background:linear-gradient(150deg,hsl(var(--h) 45% 16%),hsl(var(--h) 50% 28%));min-height:210px}
 .tile h3{margin:0;color:#fff}
 .tile p{font-size:.92rem;color:#ffffffcc;margin:0;flex:1}
-.tile__no{font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;opacity:.8}
+
 .tile__go{font-size:.9rem;font-weight:600}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:20px}
 .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;text-decoration:none;color:var(--ink)}
-.card__no{font-family:var(--mono);font-size:.75rem;color:var(--violet);margin:0 0 .5em}
+
 .card__client{font-family:var(--mono);font-size:.8rem;color:var(--muted)}
 .band{background:var(--navy);color:#fff}
 .band a{color:#CFC4F5}
