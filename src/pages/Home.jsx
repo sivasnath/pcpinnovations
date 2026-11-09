@@ -26,8 +26,8 @@ export default function Home() {
               We take ventures from idea to approval, for companies, farmer producer organisations and institutions in Kochi and across Kerala.
             </p>
             <div className="h-hero__cta">
-              <Link className="btn" to="/contact">Send an enquiry</Link>
-              <a className="btn btn--outline" href="#industries">Find your industry</a>
+              <Link className="btn btn--light" to="/contact">Send an enquiry</Link>
+              <a className="btn btn--ghost" href="#industries">Find your industry</a>
             </div>
           </div>
 
