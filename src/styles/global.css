@@ -194,7 +194,7 @@ h1 strong,h2 strong{font-weight:600}
 @keyframes stage{to{opacity:1}}
 @keyframes fill{to{transform:scaleX(1)}}
 .index{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.index__row{display:grid;grid-template-columns:14px minmax(200px,.9fr) 2fr 48px;gap:20px;align-items:baseline;padding:22px 4px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);transition:background-color .15s ease}
+.index__row{display:grid;grid-template-columns:48px minmax(200px,.9fr) 2fr;gap:20px;align-items:baseline;padding:22px 4px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);transition:background-color .15s ease}
 .index__dot{width:12px;height:12px;border-radius:50%;background:hsl(var(--h) 60% 40%);align-self:center}
 .index__name{font-size:1.25rem;font-weight:500;transition:transform .2s var(--ease-out),color .15s ease}
 .index__tag{color:var(--muted)}
@@ -206,8 +206,8 @@ h1 strong,h2 strong{font-weight:600}
 .svc__item:active,.index__row:active{transform:scale(.99)}
 .two .h-sec__title{margin:0}
 @media (hover:hover) and (pointer:fine){
-  .index__row:hover{background:hsl(var(--h) 60% 96%)}
-  .index__row:hover .index__name{transform:translateX(6px);color:hsl(var(--h) 60% 30%)}
+  
+  
   .svc__item:hover{transform:translateY(-2px)}
 }
 @media (max-width:860px){
@@ -232,10 +232,19 @@ h1 strong,h2 strong{font-weight:600}
 .hero--ind,.hero--sm{padding-top:72px}
 @media (hover:hover) and (pointer:fine){.card--link:hover,.mini:hover{border-color:var(--violet)}}
 
-/* industry index: shaded icon on hover */
-.index__icon{width:48px;height:48px;align-self:center;justify-self:end;color:hsl(var(--h) 55% 32%);opacity:0;transform:translateX(-8px) scale(.95);transition:opacity .2s var(--ease-out),transform .2s var(--ease-out)}
-@media (hover:hover) and (pointer:fine){
-  .index__row:hover .index__icon,.index__row:focus-visible .index__icon{opacity:.9;transform:none}
-}
-@media (max-width:860px){.index__icon{display:none}}
-@media (prefers-reduced-motion:reduce){.index__icon{transform:none;transition:opacity .15s}}
+/* industry index: icon badge replaces the dot on hover, Discord-style row highlight */
+.index__row{position:relative;align-items:center;border-radius:14px;padding:16px 16px 16px 12px;margin:2px 0}
+.index__mark{position:relative;display:grid;place-items:center;width:48px;height:48px}
+.index__mark .index__dot{position:absolute;transition:opacity .15s ease,transform .2s var(--ease-out)}
+.index__icon{position:absolute;inset:0;width:48px;height:48px;padding:9px;border-radius:50%;background:hsl(var(--h) 55% 86%);color:hsl(var(--h) 60% 26%);box-shadow:0 0 0 2px var(--paper),0 6px 16px hsl(var(--h) 50% 30% / .25);opacity:0;transform:scale(.85);transition:opacity .2s var(--ease-out),transform .2s var(--ease-out)}
+.index__row:hover,.index__row:focus-visible{background:linear-gradient(90deg,hsl(var(--h) 55% 90%),hsl(var(--h) 55% 95%) 45%,hsl(var(--h) 55% 98% / 0));border-bottom-color:transparent}
+.index__row:hover .index__dot,.index__row:focus-visible .index__dot{opacity:0;transform:scale(.5)}
+.index__row:hover .index__icon,.index__row:focus-visible .index__icon{opacity:1;transform:none}
+.index__row:hover .index__name,.index__row:focus-visible .index__name{transform:none;font-weight:600;color:hsl(var(--h) 60% 24%)}
+@media (max-width:860px){.index__row{grid-template-columns:48px 1fr}}
+@media (prefers-reduced-motion:reduce){.index__icon,.index__dot{transform:none!important;transition:opacity .15s}}
+.index{border-top:0}
+.index li{border-bottom:1px solid var(--line)}
+.index li:first-child{border-top:1px solid var(--line)}
+.index__row{border-bottom:0}
+.index__icon{padding:6px;background:hsl(var(--h) 55% 80%);color:hsl(var(--h) 65% 20%)}

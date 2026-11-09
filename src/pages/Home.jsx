@@ -56,10 +56,12 @@ export default function Home() {
           {industries.map((i) => (
             <li key={i.slug}>
               <Link to={`/industries/${i.slug}`} className="index__row" style={{ '--h': i.hue }}>
-                <span className="index__dot" aria-hidden="true" />
+                <span className="index__mark" aria-hidden="true">
+                  <span className="index__dot" />
+                  <IndustryIcon slug={i.slug} />
+                </span>
                 <span className="index__name">{i.name}</span>
                 <span className="index__tag">{i.tagline}</span>
-                <IndustryIcon slug={i.slug} />
               </Link>
             </li>
           ))}
