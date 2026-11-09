@@ -4,68 +4,86 @@ import { services } from '../data/services.js'
 import { site } from '../data/site.js'
 import useTitle from '../useTitle.js'
 
+// The method is a real sequence, so the stages are numbered.
+const stages = [
+  { name: 'Study', text: 'Market, location and demand study' },
+  { name: 'Plan', text: 'Project report and financial model' },
+  { name: 'Fund', text: 'Bank loan, subsidy and scheme applications' },
+  { name: 'Implement', text: 'Licences, set-up and follow-through' },
+]
+
 export default function Home() {
   useTitle('')
   return (
     <>
-      <section className="hero">
-        <div className="wrap">
-          <p className="eyebrow eyebrow--light">Kochi, Kerala · South India</p>
-          <h1 data-enter>Project reports, FPO management and government scheme support for businesses in South India</h1>
-          <p className="hero__sub" data-enter>
-            We take ventures from idea to approval, for companies, farmer producer organisations and institutions. {site.registration}.
-          </p>
-          <div className="hero__cta">
-            <a className="btn btn--light" href="#industries">Find your industry</a>
-            <Link className="btn btn--ghost" to="/contact">Send an enquiry</Link>
+      <section className="h-hero">
+        <div className="wrap h-hero__grid">
+          <div>
+            <h1 className="h-hero__title" data-enter>
+              Project reports, FPO management and scheme support for South India
+            </h1>
+            <p className="h-hero__sub" data-enter>
+              We take ventures from idea to approval, for companies, farmer producer organisations and institutions in Kochi and across Kerala.
+            </p>
+            <div className="h-hero__cta">
+              <Link className="btn" to="/contact">Send an enquiry</Link>
+              <a className="btn btn--outline" href="#industries">Find your industry</a>
+            </div>
           </div>
+
+          <aside className="file" aria-label="How a project moves with us">
+            <p className="file__title">A typical project</p>
+            <ol className="file__list">
+              {stages.map((s, i) => (
+                <li key={s.name} className="file__row" style={{ '--i': i }}>
+                  <span className="file__n">{i + 1}</span>
+                  <span>
+                    <strong>{s.name}</strong>
+                    <span className="file__t">{s.text}</span>
+                  </span>
+                </li>
+              ))}
+            </ol>
+            <span className="file__bar" aria-hidden="true" />
+          </aside>
         </div>
       </section>
 
-      <section id="industries" className="wrap">
-        <p className="eyebrow">Industries</p>
-        <h2>Industries we work in</h2>
-        <div className="grid">
+      <section id="industries" className="wrap h-sec">
+        <h2 className="h-sec__title">Industries we work in</h2>
+        <ul className="index">
           {industries.map((i) => (
-            <Link key={i.slug} to={`/industries/${i.slug}`} className="tile" style={{ '--h': i.hue }}>
-              <h3>{i.name}</h3>
-              <p>{i.tagline}</p>
-              <span className="tile__go">View work →</span>
-            </Link>
+            <li key={i.slug}>
+              <Link to={`/industries/${i.slug}`} className="index__row" style={{ '--h': i.hue }}>
+                <span className="index__dot" aria-hidden="true" />
+                <span className="index__name">{i.name}</span>
+                <span className="index__tag">{i.tagline}</span>
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
 
-      <section className="band band--soft">
-        <div className="wrap">
-          <p className="eyebrow">What we do</p>
-          <h2>Services for every industry</h2>
-          <div className="cards">
+      <section className="h-band">
+        <div className="wrap h-sec">
+          <h2 className="h-sec__title">What we prepare</h2>
+          <div className="svc">
             {services.map((s) => (
-              <Link key={s.slug} to={`/services/${s.slug}`} className="card card--link">
+              <Link key={s.slug} to={`/services/${s.slug}`} className="svc__item">
                 <h3>{s.name}</h3>
                 <p>{s.short}</p>
-                <span className="tile__go">Learn more →</span>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="moment" aria-label="Our method">
-        <div className="wrap">
-          <p className="moment__text">Ten industries. One method: <span>study, plan, fund, implement.</span></p>
-        </div>
-      </section>
-
-      <section className="wrap two">
-        <div>
-          <p className="eyebrow">About</p>
-          <h2>About PCP Innovations</h2>
-        </div>
+      <section className="wrap h-sec two">
+        <h2 className="h-sec__title">A trust with a practical brief</h2>
         <div className="prose">
           <p>We help establishments and ventures grow in line with the needs of society, with dedicated professionals and the latest technology, in a cost-effective and timely manner.</p>
-          <p><Link to="/about">Read more about us →</Link></p>
+          <p className="muted">{site.registration}.</p>
+          <p><Link to="/about">Read more about us</Link></p>
         </div>
       </section>
     </>
