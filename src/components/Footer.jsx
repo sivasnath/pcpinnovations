@@ -37,7 +37,7 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="wrap footer__base">© {new Date().getFullYear()} PCP Innovations. All rights reserved.</div>
+      <div className="wrap footer__base">© {new Date().getFullYear()} PCP Innovations. All rights reserved. Some photographs courtesy of Unsplash.</div>
     </footer>
   )
 }
