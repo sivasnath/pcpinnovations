@@ -1,6 +1,8 @@
 import { Link, useParams } from 'react-router-dom'
 import { getService, services } from '../data/services.js'
 import { industries } from '../data/industries.js'
+import Gallery from '../components/Gallery.jsx'
+import { servicePhotos } from '../data/photos.js'
 import NotFound from './NotFound.jsx'
 import useTitle from '../useTitle.js'
 
@@ -9,6 +11,7 @@ export default function Service() {
   const s = getService(slug)
   useTitle(s ? s.name : 'Not found')
   if (!s) return <NotFound />
+  const pics = servicePhotos[slug] || { strip: [], sections: {} }
   const rel = industries.filter((i) => i.services.includes(s.slug))
   return (
     <>
@@ -18,6 +21,11 @@ export default function Service() {
           <p className="hero__sub">{s.tagline}</p>
         </div>
       </section>
+      {pics.strip.length > 0 && (
+        <section className="wrap strip-sec">
+          <Gallery ids={pics.strip} variant="strip" captions={false} />
+        </section>
+      )}
       <section className="wrap narrow">
         <p className="lede">{s.intro}</p>
         {s.sections.map((sec) => (
@@ -30,6 +38,7 @@ export default function Service() {
                 {sec.defs.map(([t, d]) => (<div key={t}><dt>{t}</dt><dd>{d}</dd></div>))}
               </dl>
             )}
+            {pics.sections[sec.h] && <Gallery ids={pics.sections[sec.h]} variant="pair" />}
           </article>
         ))}
       </section>

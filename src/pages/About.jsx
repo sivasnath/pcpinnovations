@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { site } from '../data/site.js'
 import { services } from '../data/services.js'
+import Gallery from '../components/Gallery.jsx'
 import useTitle from '../useTitle.js'
 
 const list = [
@@ -22,6 +23,9 @@ export default function About() {
         <p className="lede">
           A professional platform registered under Indian Trust Act 1882 (Registration No: 161/2015), for developing establishments and ventures depending on the need of the existing society.
         </p>
+      </section>
+      <section className="wrap about-gal">
+        <Gallery ids={['residential-group', 'fpo-session-2', 'site-visit-unit', 'warehouse-visit', 'compliance-2']} variant="mosaic" />
       </section>
       <section className="wrap two">
         <div className="prose">

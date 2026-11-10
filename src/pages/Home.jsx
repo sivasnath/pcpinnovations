@@ -4,6 +4,8 @@ import { services } from '../data/services.js'
 import { site } from '../data/site.js'
 import useTitle from '../useTitle.js'
 import IndustryIcon from '../components/IndustryIcon.jsx'
+import Gallery, { Photo } from '../components/Gallery.jsx'
+import { serviceCover, fieldMosaic } from '../data/photos.js'
 
 // The method is a real sequence, so the stages are numbered.
 const stages = [
@@ -68,12 +70,21 @@ export default function Home() {
         </ul>
       </section>
 
+      <section className="wrap h-sec h-field">
+        <div className="h-field__head">
+          <h2 className="h-sec__title">From the field</h2>
+          <p className="muted">Trainings we run, sites we study and units we help set up, across Kerala and Karnataka.</p>
+        </div>
+        <Gallery ids={fieldMosaic} variant="mosaic" />
+      </section>
+
       <section className="h-band">
         <div className="wrap h-sec">
           <h2 className="h-sec__title">What we prepare</h2>
           <div className="svc">
             {services.map((s) => (
               <Link key={s.slug} to={`/services/${s.slug}`} className="svc__item">
+                {serviceCover[s.slug] && <Photo id={serviceCover[s.slug]} className="svc__img" sizes="(max-width: 860px) 100vw, 25vw" />}
                 <h3>{s.name}</h3>
                 <p>{s.short}</p>
               </Link>
@@ -83,7 +94,10 @@ export default function Home() {
       </section>
 
       <section className="wrap h-sec two">
-        <h2 className="h-sec__title">A trust with a practical brief</h2>
+        <div>
+          <h2 className="h-sec__title">A trust with a practical brief</h2>
+          <Photo id="residential-group" className="h-trust__img" />
+        </div>
         <div className="prose">
           <p>We help establishments and ventures grow in line with the needs of society, with dedicated professionals and the latest technology, in a cost-effective and timely manner.</p>
           <p className="muted">{site.registration}.</p>

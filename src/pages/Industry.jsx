@@ -2,6 +2,8 @@ import { Link, useParams } from 'react-router-dom'
 import { getIndustry, industries } from '../data/industries.js'
 import { getService } from '../data/services.js'
 import CaseVisual from '../components/CaseVisual.jsx'
+import Gallery, { Photo } from '../components/Gallery.jsx'
+import { industryPhotos } from '../data/photos.js'
 import NotFound from './NotFound.jsx'
 import useTitle from '../useTitle.js'
 
@@ -12,6 +14,7 @@ export default function Industry() {
   if (!ind) return <NotFound />
   const idx = industries.findIndex((i) => i.slug === slug)
   const next = industries[(idx + 1) % industries.length]
+  const pics = industryPhotos[slug]
   return (
     <>
       <section className="hero hero--ind" style={{ '--h': ind.hue }}>
@@ -22,7 +25,11 @@ export default function Industry() {
             <p className="hero__text">{ind.summary}</p>
             <Link className="btn btn--light" to={`/contact?industry=${ind.slug}`}>Discuss your project</Link>
           </div>
-          <CaseVisual hue={ind.hue} label={`${ind.name} pattern`} />
+          {pics ? (
+            <Photo id={pics.hero} className="visual visual--photo" eager />
+          ) : (
+            <CaseVisual hue={ind.hue} label={`${ind.name} pattern`} />
+          )}
         </div>
       </section>
 
@@ -59,6 +66,13 @@ export default function Industry() {
               </article>
             ))}
           </div>
+        </section>
+      )}
+
+      {pics && pics.gallery.length > 0 && (
+        <section className="wrap">
+          <h2 className="h3">From our projects</h2>
+          <Gallery ids={pics.gallery} />
         </section>
       )}
 
