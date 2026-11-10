@@ -312,3 +312,8 @@ h1 strong,h2 strong{font-weight:600}
 .h-hero{position:relative;isolation:isolate;overflow:hidden}
 .h-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:url('/photos/hero-collage.webp') center/cover no-repeat;opacity:.14;mix-blend-mode:luminosity}
 .h-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#180b3db3 0%,#180b3d73 50%,#180b3d40 100%)}
+/* trust section: logo lockup in place of a photo */
+.h-trust__mark{display:flex;align-items:center;gap:20px;margin-top:36px}
+.h-trust__mark img{height:88px;width:auto;display:block}
+.h-trust__mark span{font-weight:500;letter-spacing:.06em;font-size:clamp(1.5rem,3vw,2.2rem);line-height:1;color:var(--brand)}
+@media (max-width:860px){.h-trust__mark img{height:60px}.h-trust__mark{gap:14px}}

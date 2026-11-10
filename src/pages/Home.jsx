@@ -96,7 +96,10 @@ export default function Home() {
       <section className="wrap h-sec two">
         <div>
           <h2 className="h-sec__title">A trust with a practical brief</h2>
-          <Photo id="residential-group" className="h-trust__img" />
+          <div className="h-trust__mark" aria-label="PCP Innovations">
+            <img src="/logo-color.png" alt="" />
+            <span>PCP INNOVATIONS</span>
+          </div>
         </div>
         <div className="prose">
           <p>We help establishments and ventures grow in line with the needs of society, with dedicated professionals and the latest technology, in a cost-effective and timely manner.</p>
