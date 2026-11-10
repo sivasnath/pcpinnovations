@@ -307,3 +307,8 @@ h1 strong,h2 strong{font-weight:600}
 .svc__img,.h-trust__img,.visual--photo{background:var(--soft)}
 @media (max-width:860px){.gal--grid.gal--n3,.gal--grid.gal--n4,.gal--grid.gal--n6,.gal--grid.gal--n2{grid-template-columns:1fr 1fr}}
 @media (max-width:860px){.gal--mosaic.gal--n6 .gal__item:last-child{grid-column:span 2}}
+
+/* home hero: faint photo collage behind the indigo */
+.h-hero{position:relative;isolation:isolate;overflow:hidden}
+.h-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:url('/photos/hero-collage.webp') center/cover no-repeat;opacity:.14;mix-blend-mode:luminosity}
+.h-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#180b3db3 0%,#180b3d73 50%,#180b3d40 100%)}
